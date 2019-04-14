@@ -4,10 +4,6 @@ import java.util.List;
 //Sort-Methode für Objekt mit einer Set-Liste/Array, die Integer enthält, welche sortiert werden sollen
 public class SorterOfSet {
 
-
-    SorterOfSet() {
-    }
-
     //Schleife um alle Arrayinhalte einmal durchzugehen.
     public List<ArticleBlock> sortBlock(List<ArticleBlock> numbers) {
         for (int i = numbers.size() - 1; i >= 0; i--) {
