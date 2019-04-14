@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 
 /* Info: Simple BubbleSort Methode
@@ -25,18 +23,41 @@ public class Main {
         numbers.add(6);
         numbers.add(9);
 
-
-        Sorter mysorter = new Sorter();
-
         //1. Möglichkeit zu soriteren: via Collections
-        // Collections.sort(numbers);
-        System.out.println("Vor dem sortieren:");
+        //Collections.sort(numbers);
+
+        //2.1 Möglichkeit: Einfaches Sortieren über eigene Bubble Sort Methode (einfach Integer)
+        Sorter mysorter = new Sorter();
+        System.out.println("Einfaches Sortieren - Vor dem sortieren:");
         mysorter.printSortArray(numbers);
 
         mysorter.sortBlock(numbers);
 
-        System.out.println("\nNach dem sortieren:");
+        System.out.println("\nEinfaches Sortieren - Nach dem sortieren:");
         mysorter.printSortArray(numbers);
+
+        //2.2 Möglichkeit: Sortieren über eigene Bubble Sort Methode, hier über ein Objekt mit "Set"-Liste/Array, die Integer enhählt
+        //befüllte ArtikelBlock mit Randomzahlen
+
+        //erstelle Set-Liste mit Integer-Werten
+        Set<ArticleBlock> blocks = new HashSet<ArticleBlock>();
+
+        for (int i = 0; i <= 10; i++) {
+            blocks.add(new ArticleBlock());
+        }
+
+        //konvertiere Set in List (Info: erlaubt get, sortiert und erlaubt Duplikate)
+        List<ArticleBlock> listBlocks = new ArrayList<>(blocks);
+        for (int i = 0; i <=10 ; i++) {
+            listBlocks.get(i).setSortIndex((int)(Math.random()*100));
+        }
+
+        SorterOfSet mysetsorter = new SorterOfSet();
+        System.out.println("\nSet mit Objekt Sortieren - Vor dem sortieren:");
+        mysetsorter.printSortArray(listBlocks);
+        mysetsorter.sortBlock(listBlocks);
+        System.out.println("\nSet mit Objekt Sortieren - Nach dem sortieren:");
+        mysetsorter.printSortArray(listBlocks);
 
 
     }

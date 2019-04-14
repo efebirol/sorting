@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+//Einfach Sort-Methode, wo nur Zahlen durchiteriert werden
 public class Sorter {
 
 
